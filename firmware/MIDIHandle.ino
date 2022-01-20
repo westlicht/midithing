@@ -66,7 +66,7 @@ void HandleNoteOn(byte channel, byte pitch, byte velocity)
 #endif
     return; // received channel not any active MIDI
   }
-  if (GS.VoiceMode == PERCTRIG && channel == PERCCHANNEL && velocity > 0) {
+  if (GS.VoiceMode == PERCTRIG && /* channel == PERCCHANNEL && XXX REMOVED SK */ velocity > 0) {
     // Play percussion
     Gates[MIDIactive].setBlink(TRIGPERCUSSION, 1, 1); // Play trigger
     Blink.setBlink(100, 1, 1, PINLED);  // Blink once every Note ON (not in CAL/LEARN mode)

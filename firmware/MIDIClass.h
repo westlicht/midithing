@@ -262,7 +262,7 @@ class VoiceSelector {
     int getTargetChannel(byte channel, byte pitch = 0, byte velocity = 0)
     {
       // If in percussion mode, check the note and return the associated gate
-      if (IsPercMode() && channel == 10) {
+      if (IsPercMode()/* && channel == 10 XXX REMOVED SK */) {
         return (PercussionNoteGate(pitch));
       }
 
@@ -542,4 +542,3 @@ class VoiceSelector {
 };
 
 extern VoiceSelector Selector;
-
